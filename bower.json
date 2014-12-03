@@ -1,0 +1,13 @@
+{
+    "name": "zaliczenie",
+    "dependencies": {
+        "jquery": "~1.10",
+        "bootstrap": "latest",
+        "handlebars": "latest",
+        "font-awesome": "latest",
+        "bootbox": "latest",
+        "backbone": "latest",
+        "requirejs": "latest",
+        "underscore": "latest"
+    }
+}

@@ -1,0 +1,118 @@
+.footer .cart-info {
+  @active-color: #C8C7C7;
+
+  > .cart-icon {
+    color: @active-color;
+    font-size: 35pt;
+    text-shadow: 2px 2px 0px #000;
+
+    .inline-block();
+  }
+  > .cart-summary {
+    padding-left: 10px;
+    .inline-block();
+    .align-right();
+
+    > .cart-value, > .cart-amount {
+      > .distinguished{
+        font-size: 25pt;
+        color: @info-color;
+      }
+    }
+
+    > .cart-amount {
+      .block();
+      color: @active-color;
+      font-size: 12pt;
+      > .distinguished {
+        color: @info-color;
+      }
+    }
+
+  }
+}
+
+.offer-in-cart {
+  .offer-in-cart-block {
+    display: none;
+  }
+}
+// -- offer in cart
+.offer-item.offer-in-cart{
+
+
+  .offer-price-block {
+    display: none;
+  }
+  .offer-in-cart-block {
+    display: block;
+    height: 65px;
+    line-height: 65px;
+    vertical-align: bottom;
+    text-align: right;
+  }
+}
+
+.cart-top {
+  width: 500px;
+  padding: 10px 10px;
+  .cart-content {
+    margin: 0; padding: 0;
+    > li {
+      display: block;
+      &:not(:first-child) {
+        margin-top: 10px;
+      }
+
+
+      .offer-item {
+        border: 1px solid #000;
+        background-color: @body-bg;
+        .offer-image {
+          .inline-block();
+
+          padding-right: 0;
+          img {
+            width: 100%;
+            height: inherit;
+          }
+        }
+        .offer-content {
+          .inline-block();
+
+          padding: 5px 25px 5px 10px;
+          > .offer-title a {
+            margin: 0;
+            font-size: 12pt;
+            color: #444;
+
+            .no-wrap();
+          }
+
+          .offer-price-block {
+            font-size: 12pt;
+            .offer-modifier {
+              color: @content-color;
+              .inline-block();
+            }
+            .offer-price {
+              font-size: 14pt;
+              color: @info-color;
+            }
+          }
+          .offer-action {
+            color: @content-color;
+            &:hover {
+              text-decoration: none;
+              color: #000;
+            }
+          }
+
+          .offer-menu {
+            padding-top: 5px;
+          }
+        }
+      }
+    }
+  }
+}

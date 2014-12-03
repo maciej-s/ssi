@@ -1,0 +1,163 @@
+.top {
+
+
+  height: @top-h;
+  width: 100%;
+  .navbar-travel {
+    background: @top-bg;
+    border-radius: 0px;
+    height: @top-h;
+    *position: fixed;
+    width: 100%;
+    z-index: 2;
+
+
+    .navbar-nav  {
+      width: 100%;
+      margin: 0;
+
+      > .active, > :hover, > .open {
+        > a, > a:focus  {
+          color: @active-color;
+          background-color: @active-bg;
+        }
+
+      }
+
+      > li {
+        > a {
+          color: @content-color;
+          font-weight: 100;
+          font-size: 11pt;
+          padding-top: 15px;
+          padding-bottom: 15px;
+        }
+        > a:focus {
+          background-color: inherit;
+        }
+
+        &.divider {
+          margin-left: 15px;
+          width: 1px;
+          height: 50px;
+          margin-right: 15px;
+        }
+        &.logo {
+          font-size: 25pt;
+          font-family: sans-serif;
+          color: #fff;
+          .dot {
+            font-size: 40pt;
+            line-height: 30px;
+          }
+        }
+      }
+    }
+
+    .search-form.form .form-group {
+      margin-bottom: 0px;
+      padding: 7px 10px;
+      .input-group {
+        .form-control {
+          background: @body-bg;
+          border-right: 0px;
+
+          &:focus {
+            box-shadow: none;
+            border-color: #ccc;
+          }
+        }
+        > .input-group-addon {
+          background: @body-bg;
+          border-left-width: 0px;
+        }
+
+      }
+    }
+  }
+
+  .dropdown-menu {
+    position: absolute!important;
+    background-color: fadeout(@active-bg, 5%)!important;
+    .divider {
+      background-color: darken(@top-bg, 5%);
+    }
+    > li {
+      &:hover > a {
+        color: darken(@active-color, 2%)!important;
+        background-color: darken(@top-bg, 5%);
+      }
+      > a {
+        color: darken(@active-color, 2%);
+      }
+    }
+  }
+}
+
+.top .category-nav {
+  position: relative;
+  .opener {
+    display: none;
+
+    padding: 10px 15px;
+    color: #969696;
+    font-weight: 100;
+    font-size: 11pt;
+    vertical-align: middle;
+    line-height: 2;
+
+    text-decoration: none!important;
+
+    &:hover {
+
+      color: #c8c7c7;
+      background-color: #282828;
+    }
+  }
+}
+
+@media(max-width: 1200px) {
+  .top .category-nav {
+    .opener {
+      display: inline-block;
+    }
+    .opener + .nav {
+      display: none;
+
+      &.active {
+        display: block;
+        background: @top-bg;
+        > li {
+          float: none;
+        }
+      }
+    }
+  }
+}
+@media(max-width: 990px) {
+  .top .category-nav {
+    .opener {
+      display: inline-block;
+      .lbl {
+        display: none;
+      }
+    }
+    .opener + .nav {
+      display: none;
+
+      &.active {
+        display: block;
+        background: @top-bg;
+        > li {
+          float: none;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .top .my-account .lbl {
+    display: none;
+  }
+}

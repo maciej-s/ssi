@@ -1,0 +1,29 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300);
+@import "layout/prefixer";
+@import "layout/colors";
+
+// -- missing prefixes
+.filter (@func){
+  -ms-filter: @arguments;
+  -moz-filter: @arguments;
+  -webkit-filter: @arguments;
+  filter: @arguments;
+}
+
+
+@import "layout/top";
+@import "layout/offer";
+@import "layout/text";
+@import "layout/footer";
+@import "layout/cart";
+@import "layout/buttons";
+@import "layout/modal";
+
+body {
+  background: #eee;
+  font-family: 'Open Sans', 'Arial';
+  min-width: 640px;
+  .container {
+    min-width: 640px;
+  }
+}

@@ -1,0 +1,123 @@
+// -- offer list on home page or category
+.offer-list {
+  padding: 0;
+  margin: 0px -10px;
+  > li {
+    *width: 33.3333333%;
+    list-style: none;
+    padding: 10px 10px;
+    @offer-bg: lighten(@body-bg, 5%);
+    > .offer-item {
+
+      border: 1px solid darken(@body-bg, 5%);
+      > .offer-image {
+        .filter(grayscale(0.5));
+        width: inherit;
+        *height: 189px;
+        background: @offer-bg;
+        overflow: hidden;
+        img {
+          width: 100%;
+          height: auto;
+          .transition(all .2s ease);
+        }
+      }
+      > .offer-content {
+        background: @offer-bg;
+        padding: 10px;
+        position: relative;
+
+        .offer-title {
+          width: inherit;
+          h1 {
+            width: inherit;
+            margin: 0px;
+            font-size: 15pt;
+            .no-wrap()
+          }
+        }
+
+        .offer-description {
+          font-size: 10pt;
+        }
+
+        .offer-price-block {
+          font-size: 12t;
+          .offer-modifier {
+            color: @content-color;
+            .block();
+          }
+          .offer-price {
+            font-size: 24pt;
+            color: @info-color;
+            > .old-price {
+              font-size: 16pt;
+              text-decoration: line-through;
+              color: lighten(@content-color, 25%);
+            }
+          }
+        }
+
+        .shell-stars {
+          position: absolute;
+          top: -30px;
+          .fill {
+            color: @warning-color;
+            text-shadow: 0px 0px 2px fadeout(#000, 80%);
+          }
+          color: @body-bg;
+        }
+      }
+
+      &:hover {
+        box-shadow: 0px 0px 5px darken(@body-bg, 5%);
+        > .offer-image {
+
+          img {
+            .transform(scale(1.2));
+          }
+        }
+      }
+      &.last-minute {
+        position: relative;
+        overflow: hidden;
+        > .offer-image {
+          .filter(none);
+        }
+        &:before {
+          position: absolute;
+          left: -37px;
+          top: 32px;
+
+          background: @danger-color;
+          color: @body-bg;
+          content: 'Last minute';
+          z-index: 1;
+          padding: 5px 50px;
+
+          font-family: sans-serif;
+          .transform(rotate(-45deg));
+          border-top: 2px dashed #fff;
+          border-bottom: 2px dashed #fff;
+          box-shadow: 0px 0px 5px rgba(0,0,0,.4);
+        }
+      }
+
+    }
+  }
+
+  // -- view modernizer
+  &.horizontal {
+    > li {
+      float: left;
+    }
+  }
+}
+
+@media(max-width: 768px) {
+  .offer-list {
+    > li {
+      *width: 50%;
+    }
+  }
+}
