@@ -7,7 +7,7 @@ Do poprawnej pracy nad layoutem jest wymagane IDE/edytor wspierający kolorowani
 $ cd [nazwa_projektu]
 $ git init
 $ git remote add remote https://github.com/gonet123/ssi
-$ git fetch
+$ git fetch remote
 $ git checkout remote master
 ```
 Powyższe komendy spowodują pobranie repo i zacheckoutowanie do głównej branchy (master). W celu aktualizacji swojej kopi projektu należy uruchomić
