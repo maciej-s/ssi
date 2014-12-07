@@ -7,59 +7,42 @@ define([
     'jquery',
     'underscore',
     'backbone',
-    'bootbox',
+    'app/alert',
     'bootstrap'
+],function($,_,Backbone, Alert){
 
-],function($,_,Backbone,Bootbox){
-
-
-    // read static routing "table"
-    var getRouter =  function (routerfile) {
-        // force to read using async - reason:
-        // main app instance is waiting for routing data
-        var routing = {};
-        Backbone.ajax({
-            url: routerfile,
-            dataType: 'json',
-            success: function (data) {
-                routing = data
-            },
-            error : function () {
-                throw new Error('Unable to setup application');
-            },
-            async: true
-        });
-        return routing;
-    };
-    /*getRouter('js/router/router.json')*/
     // setup dynamic routing
     var Router = Backbone.Router.extend({
+        initialize : function () {
+            // this.route('*actions', 'home');
+        },
         routes: {
-            '*actions': 'default'
+            '*actions': 'dynamic'
         }
     });
 
     // routing resolver
     var dynamicResolver = function (action) {
+        if(!action) {
+            action = 'home';
+        }
+        console.debug('loading view '+action);
         require(['app/views/'+action], function (view){
-            console.log('found!');
-            if (view instanceof Backbone.View) {
-                view.render();
-            }
-
+            console.debug('init view', view);
+            view.initialize({
+                el: $('#main-content')
+            });
         }, function () {
-            console.debug('?');
+            Alert.error('Error occurred during view loading. Unable to continue');
         });
     };
 
     return {
         initialize: function () {
             var appRouter = new Router;
-            console.log('init-router');
             // use dynamic routing as default
-            appRouter.on('route:default', dynamicResolver);
-
-            // Backbone.history.start();
+            appRouter.on('route:dynamic', dynamicResolver);
+            Backbone.history.start();
         }
     }
 });
