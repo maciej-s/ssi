@@ -11,7 +11,9 @@ $ git fetch remote
 $ git checkout master
 ```
 Powyższe komendy spowodują pobranie repo i zacheckoutowanie do głównej branchy (master). 
+
 __Przypomnienie__
+
 W celu aktualizacji swojej kopi projektu należy uruchomić
 ```sh
 $ git push remote master
