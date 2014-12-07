@@ -4,7 +4,7 @@ define([
     'app/model/cart'
 ], function (Handlebars, $, Cart){
 
-    var Compiled = [];
+    window.Compiled = [];
 
     /**
      * Get template content
@@ -24,11 +24,11 @@ define([
      */
     function cache(template) {
         var $def = $.Deferred();
-        if(Compiled[template] == null) {
+        if(Compiled[template] == undefined) {
             get(template).done(function (data) {
                 Compiled[template] = Handlebars.compile(data);
                 // resolve tpl
-                $def.resolve(Compiled[template]);
+                $def.resolve(Compiled[template], data);
             }).fail(function(){
                 $def.reject();
             });
@@ -77,16 +77,10 @@ define([
         return ret;
     });
 
-    // conditional block
-    Handlebars.registerHelper('if', function (a, b, options) {
-        if(a == b) {
-            options.fn();
-        }  else {
-            options.inverse();
-        }
+    // register partials
+    cache('pages/home/offer').done(function (template) {
+       Handlebars.registerPartial('homeOffer', template)
     });
-
-
 
     return {
         load: load,

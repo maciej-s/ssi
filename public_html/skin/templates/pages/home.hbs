@@ -1,47 +1,8 @@
 <div class="container">
     <ul class="offer-list horizontal clearfix" id="home-offer">
     {{#collection offers}}
-        <li class="col-lg-3 col-sm-4 col-xs-6">
-            {{! Offer tempalte  - for homepage and offers listing }}
-            <article class="offer-item {{#incart}}offer-in-cart{{/incart}} {{#hotel}}offer-hotel{{/hotel}} {{#lastMinute}}last-minute{{/lastMinute}}">
-                <a class="offer-image offer-preview" href="{{uri}}">
-                    {{#image}}<img src="{{.}}"/>{{/image}}
-                </a>
-                <div class="offer-content">
-                    {{#hotel}}
-                        <div class="shell-stars is-tooltip" data-amount="4" title="Four points in shell rating">
-                            <i class="fa fa-star fill"></i>
-                            <i class="fa fa-star fill"></i>
-                            <i class="fa fa-star fill"></i>
-                            <i class="fa fa-star fill"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
-                    {{/hotel}}
-                    <header class="offer-title">
-                        <h1>
-                            <i class="fa fa-university"></i> {{name}}
-                        </h1>
-                    </header>
-                    <p class="offer-description">
-                        {{description}}
-                    </p>
-                    <div class="clearfix offer-price-block">
-                        {{#incart}}
-                            <a href="#" class="btn btn-danger remove-product"><i class="glyphicon-shopping-cart glyphicon"></i> Remove from cart</a>
-                        {{else}}
-                            <span class="align-right block">
-                    <span class="offer-modifier">&nbsp;</span>
-                    <span class="offer-price">
-                        {{#oldprice}}
-                            <span class="old-price is-format-price">{{.}}</span>
-                        {{/oldprice}}
-                        {{price}}
-                    </span>
-                </span>
-                        {{/incart}}
-                    </div>
-                </div>
-            </article>
+        <li class="col-lg-3 col-sm-4 col-xs-6" id="offer-{{id}}">
+            {{> homeOffer}}
         </li>
     {{/collection}}
     </ul>

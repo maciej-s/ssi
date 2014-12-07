@@ -7,7 +7,7 @@ define([
 
     var ProductsFixtures = [
         {
-            'id': 1,
+            'id': 2,
             'image': 'skin/image/creative-tour-and-travel-logo-design2.png',
             'uri': '#/offer/test',
             'name': 'Testing fixture',
@@ -56,12 +56,34 @@ define([
                 l = products.length;
 
             products.each(function (product, k) {
-                if( Number(product.get('id')) === Number(pid) ) {
+                if( product && Number(product.get('id')) === Number(pid) ) {
                     products.remove(product);
                     return false;
                 }
             });
             return l > products.length || l === 0;
+        },
+
+        /**
+         * Add product to cart
+         * @param {Product} product
+         */
+        add : function (id) {
+            var product = new Product({id: id}),
+                $def = new $.Deferred(),
+                dis = this;
+            product.fetch({
+                success : function () {
+                    // add product to cart
+                    var products = dis.get('products');
+                    products.add(product);
+                    $def.resolve();
+                },
+                fail : function (){
+                    $def.reject();
+                }
+            });
+            return $def.promise();
         },
 
         /**
@@ -89,16 +111,6 @@ define([
     products.on('remove', function (product) {
         CartInstance.recalculate();
     });
-
-    // Create cart model
-    /*return function () {
-        if(!CartInstance) {
-            CartInstance = new Cart();
-            CartInstance.get('products').reset(ProductsFixtures);
-            CartInstance.recalculate();
-        }
-        return CartInstance;
-    }*/
 
     return {
         get : function () {

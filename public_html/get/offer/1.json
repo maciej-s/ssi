@@ -1,0 +1,47 @@
+{
+    "images": [
+        {
+            "image": "skin/image/hotels/15039_75_z.jpg"
+        },
+        {
+            "image": "skin/image/hotels/15039_78_z.jpg"
+        },
+        {
+            "image": "skin/image/hotels/15039_79_z.jpg"
+        }
+    ],
+    "widget": {
+        "0": {
+            "name": "Description",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu tincidunt tellus. Vestibulum at ipsum eget lectus convallis volutpat. Nulla orci tellus, posuere iaculis fringilla sed, blandit ut augue. Mauris tristique vulputate lectus et semper. Curabitur hendrerit viverra tellus, a laoreet dolor feugiat ac. Proin mattis dignissim nulla, eget iaculis mi feugiat at. Curabitur ultricies lectus eget elit placerat tincidunt."
+        },
+        "1": {
+            "name": "Recommendation",
+            "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu tincidunt tellus. Vestibulum at ipsum eget lectus convallis volutpat. Nulla orci tellus, posuere iaculis fringilla sed, blandit ut augue. Mauris tristique vulputate lectus et semper. Curabitur hendrerit viverra tellus, a laoreet dolor feugiat ac. Proin mattis dignissim nulla, eget iaculis mi feugiat at. Curabitur ultricies lectus eget elit placerat tincidunt."
+        }
+    },
+    "id": 1,
+    "name": "Example offer",
+    "hotel": {
+        "stars": 4
+    },
+    "pricing": {
+        "regular": "580",
+        "discount": "200"
+    },
+    "badges": {
+        "lastMinute": true
+    },
+    "basic": {
+        "location": {
+            "name": "Location",
+            "type": "text",
+            "value": "Kraków"
+        },
+        "accommodation": {
+            "name": "Accommodation",
+            "type": "text",
+            "value": "Office Box"
+        }
+    }
+}

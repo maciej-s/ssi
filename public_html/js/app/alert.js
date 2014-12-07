@@ -47,8 +47,8 @@ define([
 
         var $alert = $('<div>',{
             class: 'alert alert-'+type+' alert-dismissible',
-            html: '<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>'+
-                '<i class="'+icon+'"></i>' + printf.apply(printf, [message].concat(args))
+            html: '<div class="container"><div class="row"><div class="col-xs-12"><button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>'+
+                '<i class="'+icon+'"></i>' + printf.apply(printf, [message].concat(args))+'</div></div></div>'
         });
         $('.alert-container').append($alert);
     };

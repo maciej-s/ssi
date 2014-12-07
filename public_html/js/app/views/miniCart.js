@@ -1,9 +1,11 @@
 define([
     'backbone',
     'app/template',
-    'app/alert'
-], function (Backbone, Template, Alert) {
-    var miniCart = Backbone.View.extend({
+    'app/alert',
+    'app/model/cart',
+    'app/pool'
+], function (Backbone, Template, Alert, Cart, Pool) {
+    var MiniCart = Backbone.View.extend({
         initialize: function () {
             console.log('Init mini cart', this.$el);
             this.render()
@@ -32,8 +34,8 @@ define([
             if(pid) {
                 if (this.model.remove(pid)) {
                     // this.model.recalculate();
-                    // reload view
-                    this.render(true);
+                    // populate cart refreshing
+                    Pool.trigger('cart:refresh', pid);
                 } else {
                     Alert.error('Missing offer data');
                 }
@@ -44,9 +46,63 @@ define([
         }
     });
 
+    var CartInstance = null;
+
+    // register pool events
+
+    // remove product from cart
+    Pool.on('cart:remove', function ( pid ) {
+        if (CartInstance.model.remove(pid)) {
+            // this.model.recalculate();
+        } else {
+            Alert.error('Missing offer data');
+        }
+    });
+
+    // add product to cart
+    Pool.on('cart:add', function (pid) {
+        CartInstance.model.add(pid);
+    });
+
+    Pool.on('cart:refresh', function ( pid ) {
+        CartInstance.render();
+    });
+
     return {
+        /**
+         * Initialize cart view instance
+         * @param options
+         * @returns {MiniCart}
+         */
         initialize: function (options) {
-            new miniCart(options)
+            if(!CartInstance) {
+                CartInstance = new MiniCart(_.extend(options, {
+                    model: Cart.get()
+                }));
+            }
+            return CartInstance;
+        },
+        /**
+         * Return cart view instance
+         * @returns {MiniCart}
+         */
+        get : function () {
+            if(!CartInstance) {
+                this.initialize({});
+            }
+            return CartInstance;
+        },
+        /**
+         * Refresh cart view
+         */
+        refresh : function () {
+            this.get().render();
+        },
+        /**
+         * Return cart model
+         */
+        model : function () {
+            return Cart.get()
         }
     }
 });

@@ -8,8 +8,9 @@ define([
     'underscore',
     'backbone',
     'app/alert',
+    'app/views/breadcrumbs',
     'bootstrap'
-],function($,_,Backbone, Alert){
+],function($,_,Backbone, Alert, Breadcrumbs){
 
     // setup dynamic routing
     var Router = Backbone.Router.extend({
@@ -23,15 +24,39 @@ define([
 
     // routing resolver
     var dynamicResolver = function (action) {
+        var params = [];
         if(!action) {
             action = 'home';
+        } else {
+            console.log(action);
+            var matched = action.match(/([\w-_]+)(?=\/|)/g);
+            if(matched && matched.length > 0) {
+                action = matched[0]; matched.shift();
+                params = matched;
+            } else {
+                Alert.error('Error at page loading.');
+                return false;
+            }
+            // escape url
+            console.debug(params);
         }
+
         console.debug('loading view '+action);
         require(['app/views/'+action], function (view){
             console.debug('init view', view);
-            view.initialize({
-                el: $('#main-content')
+
+            var breadcrumbs = Breadcrumbs.get();
+
+            var $def = view.initialize({
+                el: $('#main-content'),
+                breadcrumbs: Breadcrumbs,
+                paras: params
             });
+
+            $.when($def).done(function () {
+                breadcrumbs.render();
+            })
+
         }, function () {
             Alert.error('Error occurred during view loading. Unable to continue');
         });

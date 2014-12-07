@@ -14,7 +14,7 @@ define([
     // and fetch tpl
     var initCart = function () {
         miniCart.initialize({
-            el: $('#mini-cart'), model: CartModel.get()
+            el: $('#mini-cart')
         });
     };
 

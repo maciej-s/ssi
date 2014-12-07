@@ -14,6 +14,12 @@ define([
             price: '',
             id: 0,
             url: ''
+        },
+        urlRoot : 'get/offer/home',
+        url: function () {
+            if(this.get('id')) {
+                return this.urlRoot +'/'+ this.get('id')+'.json'
+            }
         }
     })
 });
