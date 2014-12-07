@@ -10,7 +10,9 @@ $ git remote add remote https://github.com/gonet123/ssi
 $ git fetch remote
 $ git checkout master
 ```
-Powyższe komendy spowodują pobranie repo i zacheckoutowanie do głównej branchy (master). W celu aktualizacji swojej kopi projektu należy uruchomić
+Powyższe komendy spowodują pobranie repo i zacheckoutowanie do głównej branchy (master). 
+__Przypomnienie__
+W celu aktualizacji swojej kopi projektu należy uruchomić
 ```sh
 $ git push remote master
 ```
