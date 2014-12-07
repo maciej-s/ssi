@@ -1,0 +1,26 @@
+.breadcrumbs {
+  background: lighten(@top-bg, 5%);
+  li {
+    > a, > span {
+      padding: 5px;
+      color: @active-color;
+      text-transform: capitalize;
+      .inline-block();
+      font-size: 10pt;
+    }
+    > a:hover, a:focus {
+      color: #fff;
+      text-decoration: underline;
+      background: none;
+    }
+    &:not(:first-child):not(:last-child):after{
+        content: "\f054";
+        display: inline-block;
+        font: normal normal normal 10px/1 FontAwesome;
+
+        padding-left: 5px;
+        padding-right: 5px;
+        color: @active-color;
+    }
+  }
+}

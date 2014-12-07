@@ -7,59 +7,67 @@ define([
     'jquery',
     'underscore',
     'backbone',
-    'bootbox',
+    'app/alert',
+    'app/views/breadcrumbs',
     'bootstrap'
+],function($,_,Backbone, Alert, Breadcrumbs){
 
-],function($,_,Backbone,Bootbox){
-
-
-    // read static routing "table"
-    var getRouter =  function (routerfile) {
-        // force to read using async - reason:
-        // main app instance is waiting for routing data
-        var routing = {};
-        Backbone.ajax({
-            url: routerfile,
-            dataType: 'json',
-            success: function (data) {
-                routing = data
-            },
-            error : function () {
-                throw new Error('Unable to setup application');
-            },
-            async: true
-        });
-        return routing;
-    };
-    /*getRouter('js/router/router.json')*/
     // setup dynamic routing
     var Router = Backbone.Router.extend({
+        initialize : function () {
+            // this.route('*actions', 'home');
+        },
         routes: {
-            '*actions': 'default'
+            '*actions': 'dynamic'
         }
     });
 
     // routing resolver
     var dynamicResolver = function (action) {
-        require(['app/views/'+action], function (view){
-            console.log('found!');
-            if (view instanceof Backbone.View) {
-                view.render();
+        var params = [];
+        if(!action) {
+            action = 'home';
+        } else {
+            console.log(action);
+            var matched = action.match(/([\w-_]+)(?=\/|)/g);
+            if(matched && matched.length > 0) {
+                action = matched[0]; matched.shift();
+                params = matched;
+            } else {
+                Alert.error('Error at page loading.');
+                return false;
             }
+            // escape url
+            console.debug(params);
+        }
+
+        console.debug('loading view '+action);
+        require(['app/views/'+action], function (view){
+            console.debug('init view', view);
+
+            var breadcrumbs = Breadcrumbs.get();
+
+            var $def = view.initialize({
+                el: $('#main-content'),
+                breadcrumbs: Breadcrumbs,
+                paras: params
+            });
+
+            $.when($def).done(function () {
+                breadcrumbs.render();
+            })
 
         }, function () {
-            console.debug('?');
+            Alert.error('Error occurred during view loading. Unable to continue');
         });
     };
 
     return {
         initialize: function () {
             var appRouter = new Router;
-            console.log('init-router');
             // use dynamic routing as default
-            appRouter.on('route:default', dynamicResolver);
-
-            // Backbone.history.start();
+            appRouter.on('route:dynamic', dynamicResolver);
+            Backbone.history.start();
         }
     }
 });

@@ -2,8 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8"/>
-        <title>Home page</title>
-
+        <title>{{title}}</title>
         <link rel="stylesheet" type="text/css" href="vendor/bootstrap/dist/css/bootstrap.min.css"/>
         <link rel="stylesheet" type="text/css" href="vendor/font-awesome/css/font-awesome.min.css"/>
         <link rel="stylesheet" type="text/css" href="skin/layout.css"/>
@@ -21,9 +20,9 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="col-xs-5 col-sm-5 col-md-6 col-lg-6 category-nav">
+                            <div class="col-xs-5 col-sm-5 col-md-6 col-lg-7 category-nav">
                                 <div class="row">
-                                    <div class="col-xs-9 col-sm-9 col-lg-7 col-md-6">
+                                    <div class="col-xs-9 col-sm-9 col-lg-6 col-md-6">
                                         <div class="row">
                                             <form action="#" class="form form-horizontal search-form">
                                                 <fieldset>
@@ -41,31 +40,88 @@
                                             </form>
                                         </div>
                                     </div>
-                                    <div class="col-xs-3 col-sm-3 col-lg-5 col-md-6">
+                                    <div class="col-xs-3 col-sm-3 col-lg-6 col-md-6">
                                         <a href="#" class="opener is-toggle" data-toggle="">
                                             <i class="fa fa-list"></i><span class="lbl"> Categories</span>
                                         </a>
                                         <ul class="nav navbar-nav row">
-                                            <li class=""><a href="#"><i class="fa fa-university"></i> Hotels</a></li>
-                                            <li class=""><a href="#"><i class="fa fa-suitcase"></i> Travels</a></li>
+                                            <li class=""><a href="#/Hotels"><i class="fa fa-university"></i> Hotels</a></li>
+                                            <li class=""><a href="#/Travels"><i class="fa fa-suitcase"></i> Travels</a></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xs-5 col-sm-5 col-md-4 col-lg-4">
+                            <div class="col-xs-5 col-sm-5 col-md-4 col-lg-3">
                                 <ul class="nav navbar-nav row">
-                                    <!-- place mini cart //-->
-                                    <li class="dropdown pull-right" id="mini-cart"></li>
-
+                                    <li class="dropdown pull-right">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                            <i class="glyphicon glyphicon-shopping-cart"></i> <span class="lbl color-info"> €20 (2)</span> <span class="caret"></span>
+                                        </a>
+                                        <div class="dropdown-menu cart-top" role="menu">
+                                            <ul class="cart-content">
+                                                <li>
+                                                    <article class="offer-item last-minute">
+                                                        <div class="row">
+                                                            <aside class="offer-image col-xs-3">
+                                                                <img src="skin/image/i22ce3.jpg"/>
+                                                            </aside>
+                                                            <div class="offer-content col-xs-9">
+                                                                <header class="offer-title">
+                                                                    <a href="#">City Center Meal very very long without overflow</a>
+                                                                </header>
+                                                                <div class="row offer-menu">
+                                                                    <div class="col-xs-6 align-left">
+                                                                        <a href="#" class="offer-action"><i class="glyphicon glyphicon-trash"></i> remove</a>
+                                                                    </div>
+                                                                    <div class="offer-price-block col-xs-6">
+                                                                        <span class="align-right block">
+                                                                            <span class="offer-price">€200</span>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </article>
+                                                </li>
+                                                <li>
+                                                    <article class="offer-item last-minute">
+                                                        <div class="row">
+                                                            <aside class="offer-image col-xs-3">
+                                                                <img src="skin/image/idx9f3.jpg">
+                                                            </aside>
+                                                            <div class="offer-content col-xs-9">
+                                                                <header class="offer-title">
+                                                                    <a href="#">City Center Meal very very long without overflow</a>
+                                                                </header>
+                                                                <div class="row offer-menu">
+                                                                    <div class="col-xs-6 align-left">
+                                                                        <a href="#" class="offer-action"><i class="glyphicon glyphicon-trash"></i> remove</a>
+                                                                    </div>
+                                                                    <div class="offer-price-block col-xs-6">
+                                                                        <span class="align-right block">
+                                                                            <span class="offer-price">€200</span>
+                                                                        </span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </article>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
                                     <li class="dropdown pull-right my-account">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                             <i class="glyphicon glyphicon-user"></i><span class="lbl"> My Account</span> <span class="caret"></span></a>
 
                                         <ul class="dropdown-menu" role="menu">
-                                            <li><a href="#">Orders</a></li>
-                                            <li><a href="#">History</a></li>
+                                            <li><a href="#">Action</a></li>
+                                            <li><a href="#">Another action</a></li>
+                                            <li><a href="#">Something else here</a></li>
                                             <li class="divider"></li>
-                                            <li><a href="#">Settings</a></li>
+                                            <li><a href="#">Separated link</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="#">One more separated link</a></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -74,13 +130,8 @@
                     </div>
                 </nav>
             </header>
-            <div class="container">
-                <div class="row">
-                    <div class="alert-container col-xs-12">
-                    </div>
-                </div>
-            </div>
-            <section class="content" id="main-content">
+            <section class="content" id="content">
+
             </section>
         </div>
         <footer class="footer">
@@ -153,7 +204,7 @@
                 </div>
             </div>
         </footer>
-        <!-- loag js //-->
+        <!-- load js //-->
         <script type="text/javascript" src="vendor/requirejs/require.js"></script>
         <script type="text/javascript" src="js/require.js"></script>
     </body>
