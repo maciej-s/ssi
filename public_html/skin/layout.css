@@ -279,9 +279,6 @@
 }
 .offer-list.horizontal > li {
   float: left;
-  flex: 1 100%;
-  /* order: 2; */
-  /* order: 1; */
 }
 @media (max-width: 768px) {
   .offer-list > li {
