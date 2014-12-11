@@ -100,6 +100,7 @@ define([
             });
             return found ? true : false;
         }
+
     });
 
     // add handlers for products set/remove
@@ -120,6 +121,16 @@ define([
                 CartInstance.recalculate();
             }
             return CartInstance;
+        },
+
+        /**
+         * Set model properties
+         * @param model
+         */
+        setProperties : function (model) {
+            var cart = this.get();
+            // check in cart status
+            model.set('incart', cart.in(model.get('id')));
         }
     }
 });

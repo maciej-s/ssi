@@ -1,0 +1,5 @@
+{{^incart}}
+    <a href="#" class="btn btn-success add-product {{#largeButtons}}btn-lg{{/largeButtons}}" data-id="{{id}}"><i class="glyphicon-shopping-cart glyphicon"></i> {{#largeButtons}}Add To Cart{{else}}Add{{/largeButtons}}</a>
+{{else}}
+    <a href="#" class="btn btn-danger remove-product {{#largeButtons}}btn-lg{{/largeButtons}}" data-id="{{id}}"><i class="glyphicon-shopping-cart glyphicon"></i> {{#largeButtons}}Remove From Cart{{else}}remove{{/largeButtons}}</a>
+{{/incart}}

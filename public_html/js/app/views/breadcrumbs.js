@@ -48,10 +48,13 @@ define([
                     name: name,
                     link: link
                 });
+                this.render();
             }
         },
         clean : function () {
-            Instance.model.reset();
+            if(Instance) {
+                Instance.model.reset();
+            }
         },
 
         render : function () {

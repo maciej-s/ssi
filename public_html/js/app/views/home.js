@@ -12,11 +12,6 @@ define([
     var Home = Backbone.View.extend({
         initialize : function (options) {
 
-            if (options.breadcrumbs !== undefined) {
-                options.breadcrumbs.push('Home');
-
-            }
-
             console.log(options, this);
 
             // fetch home with content
@@ -129,10 +124,7 @@ define([
     // return home view
     return {
         initialize: function (settings) {
-            if(!HomeView) {
-                HomeView = init(settings);
-            }
-            return HomeView;
+            return HomeView = init(settings);
         }
     };
 });

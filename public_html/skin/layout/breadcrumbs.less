@@ -1,5 +1,11 @@
 .breadcrumbs {
-  background: lighten(@top-bg, 5%);
+  height: 28px;
+  > .breadcrumbs-inner {
+    background: lighten(@top-bg, 5%);
+    width: 100%;
+    position: fixed;
+    z-index: 1020;
+  }
   li {
     > a, > span {
       padding: 5px;

@@ -10,16 +10,16 @@
             "image": "skin/image/hotels/15039_79_z.jpg"
         }
     ],
-    "widget": {
-        "0": {
+    "widget":[
+        {
             "name": "Description",
             "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu tincidunt tellus. Vestibulum at ipsum eget lectus convallis volutpat. Nulla orci tellus, posuere iaculis fringilla sed, blandit ut augue. Mauris tristique vulputate lectus et semper. Curabitur hendrerit viverra tellus, a laoreet dolor feugiat ac. Proin mattis dignissim nulla, eget iaculis mi feugiat at. Curabitur ultricies lectus eget elit placerat tincidunt."
-        },
-        "1": {
+        }, {
             "name": "Recommendation",
             "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eu tincidunt tellus. Vestibulum at ipsum eget lectus convallis volutpat. Nulla orci tellus, posuere iaculis fringilla sed, blandit ut augue. Mauris tristique vulputate lectus et semper. Curabitur hendrerit viverra tellus, a laoreet dolor feugiat ac. Proin mattis dignissim nulla, eget iaculis mi feugiat at. Curabitur ultricies lectus eget elit placerat tincidunt."
         }
-    },
+    ],
+    "url": "#/offer/1/Example-offer",
     "id": 1,
     "name": "Example offer",
     "hotel": {

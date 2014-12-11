@@ -45,12 +45,14 @@ define([
         require(['app/views/'+action], function (view){
             console.debug('init view', view);
 
+            Breadcrumbs.clean();
             var breadcrumbs = Breadcrumbs.get();
+            Breadcrumbs.push('Home', '#/home');
 
             var $def = view.initialize({
                 el: $('#main-content'),
                 breadcrumbs: Breadcrumbs,
-                paras: params
+                params: params
             });
 
             $.when($def).done(function () {

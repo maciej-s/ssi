@@ -8,6 +8,7 @@
         "bootbox": "latest",
         "backbone": "latest",
         "requirejs": "latest",
-        "underscore": "latest"
+        "underscore": "latest",
+        "backbone-session" :""
     }
 }

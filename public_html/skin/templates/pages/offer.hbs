@@ -2,7 +2,7 @@
 <div class="page-wrapper">
     <div class="">
         <article class="page offer last-minute">
-            <aside class="container offer-images carousel slide" data-ride="carousel" data-interval="2000" id="product-carousel">
+            <aside class="container offer-images carousel slide" data-ride="carousel" data-interval="1000" id="product-carousel">
                 <ol class="carousel-indicators">
                     {{#each images}}
                     <li data-target="#product-carousel" data-slide-to="{{@index}}" class="{{#if @first}}active{{/if}}"></li>
@@ -11,8 +11,6 @@
                 <ul class="nav carousel-inner">
                     {{#each images}}
                         <li class="item {{#if @first}}active{{/if}}"><img src="{{image}}"/></li>
-                        <li class="item"><img src="{{image}}"/></li>
-                        <li class="item"><img src="{{image}}"/></li>
                     {{/each}}
                 </ul>
             </aside>
@@ -68,9 +66,11 @@
                                         </div>
                                         {{/discount}}
                                     {{/pricing}}
-                                    <div class="align-right" id="add-button">
+                                    <div class="align-right">
                                         <br/>
-                                        <a href="#" class="btn btn-success btn-lg add-prodct" data-id="{{id}}">Add to Basket</a>
+                                        <div id="action-buttons">
+                                            {{> cartButtons}}
+                                        </div>
                                     </div>
                                 </div>
                             </div>

@@ -279,9 +279,6 @@
 }
 .offer-list.horizontal > li {
   float: left;
-  flex: 1 100%;
-  /* order: 2; */
-  /* order: 1; */
 }
 @media (max-width: 768px) {
   .offer-list > li {
@@ -508,7 +505,13 @@ body {
  * Single page layout
  */
 .breadcrumbs {
+  height: 28px;
+}
+.breadcrumbs > .breadcrumbs-inner {
   background: #3a3a3a;
+  width: 100%;
+  position: fixed;
+  z-index: 1020;
 }
 .breadcrumbs li > a,
 .breadcrumbs li > span {
@@ -600,6 +603,7 @@ body {
   border: 1px solid #e1e1e1;
   padding: 5px 10px;
   margin-bottom: 15px;
+  margin-top: 15px;
   background: #fbfbfb;
 }
 .page.offer .offer-body .offer-widget:hover {

@@ -78,8 +78,12 @@ define([
     });
 
     // register partials
-    cache('pages/home/offer').done(function (template) {
-       Handlebars.registerPartial('homeOffer', template)
+    cache('common/cart/buttons').done(function (template) {
+        Handlebars.registerPartial('cartButtons', template);
+
+        cache('pages/home/offer').done(function (template) {
+            Handlebars.registerPartial('homeOffer', template);
+        });
     });
 
     return {
