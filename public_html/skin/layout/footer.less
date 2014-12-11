@@ -1,0 +1,78 @@
+@footer-h: 200px;
+.footer {
+  @top-bg: #2d2d2d;
+  @active-bg: #282828;
+  @active-color: #C8C7C7;
+  @shadow: lighten(@top-bg, 5%);
+
+  height: @footer-h;
+  background: @top-bg;
+  padding: 50px 0 20px 0;
+  border-top: 2px dashed @active-color;
+  box-shadow: 0px 40px 0px 0px @shadow inset;
+
+  .section {
+    .section-title {
+      font-size: 14pt;
+      margin: 0 0 10px 0;
+      color: darken(@active-color, 15%);
+      .align-right();
+    }
+    .section-icon {
+      color: @active-color;
+      font-size: 35pt;
+      text-shadow: 2px 2px 0px #000;
+      text-align: right;
+    }
+  }
+  .nav.nav-list {
+    > li {
+      > a {
+        padding: 2px 0;
+        font-size:11pt;
+        color: darken(@active-color, 25%);
+        &:hover,&:focus {
+          background-color: inherit;
+          color: @active-color;
+        }
+      }
+      &.active > a {
+        color: @active-color;
+      }
+
+    }
+  }
+
+  .logo {
+    font-size: 25pt;
+    font-family: sans-serif;
+    margin-right: 15px;
+    color: @top-bg;
+    position: absolute;
+    top: -55px;
+    right: 0px;
+
+    .dot {
+      font-size: 50pt;
+      line-height: 30px;
+    }
+  }
+}
+
+// sticky footer
+
+.wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto @footer-h*-1;
+
+  &:after {
+    content: '';
+    display: block;
+    height: @footer-h;
+  }
+}
+html, body {
+  height: 100%;
+}

@@ -1,0 +1,93 @@
+{{! Single offer page view }}
+<div class="page-wrapper">
+    <div class="">
+        <article class="page offer last-minute">
+            <aside class="container offer-images carousel slide" data-ride="carousel" data-interval="1000" id="product-carousel">
+                <ol class="carousel-indicators">
+                    {{#each images}}
+                    <li data-target="#product-carousel" data-slide-to="{{@index}}" class="{{#if @first}}active{{/if}}"></li>
+                    {{/each}}
+                </ol>
+                <ul class="nav carousel-inner">
+                    {{#each images}}
+                        <li class="item {{#if @first}}active{{/if}}"><img src="{{image}}"/></li>
+                    {{/each}}
+                </ul>
+            </aside>
+            <div class="container offer-body ">
+                <div class="row">
+                    <div class="col-xs-12">
+                        {{#if hotel}}
+                        <div class="shell-stars is-tooltip" data-amount="{{stars}}" title="{{stars}} points in shell rating">
+                            <i class="fa fa-star fill"></i>
+                            <i class="fa fa-star fill"></i>
+                            <i class="fa fa-star fill"></i>
+                            <i class="fa fa-star fill"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        {{/if}}
+                        <header>
+                            <h1 class="offer-title page-title">{{name}}</h1>
+                        </header>
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <div class="offer-widget clean">
+                                    <h4 class="title">Basic Info</h4>
+                                    <div class="content offer-form form from-horizontal">
+                                        <fieldset>
+                                            {{#each basic}}
+                                            <div class="form-group">
+                                                <div class="row">
+                                                    <label class="control-label col-xs-6">
+                                                        {{name}}
+                                                    </label>
+                                                    <div class="col-xs-6 offer-price">
+                                                        {{value}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {{/each}}
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-8">
+                                <div class="offer-price-info">
+                                    {{#pricing}}
+                                    <div class="price {{#discount}}discount{{/discount}}">
+                                        <span class="modifier">regular price</span> € {{regular}}
+                                    </div>
+                                        {{#discount}}
+                                        <div class="price">
+                                            <span class="modifier label"> 33% discount</span> € {{.}}
+                                                <span class="modifier inline-block uppercase">
+                                                    <small>including VAT</small>
+                                                </span>
+                                        </div>
+                                        {{/discount}}
+                                    {{/pricing}}
+                                    <div class="align-right">
+                                        <br/>
+                                        <div id="action-buttons">
+                                            {{> cartButtons}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            {{#widget}}
+                            <div class="col-xs-6">
+                                <div class="offer-widget">
+                                    <h4 class="title">{{name}}</h4>
+                                    <p class="content">{{content}}</p>
+                                </div>
+                            </div>
+                            {{/widget}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+</div>

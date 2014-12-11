@@ -1,0 +1,43 @@
+[
+    {
+        "hotel": {
+            "start": 4
+        },
+        "image": "skin/image/i22ce3.jpg",
+        "name": "Testing hotel",
+        "description": "Cras turpis lectus, tempor a mollis eu, blandit eget erat. Vestibulum non ante non eros pellentesque varius at id enim. Nunc ultrices posuere tellus et lacinia. Curabitur lobortis",
+        "price": "100",
+        "id": 1,
+        "url": "#/offer/1/Testing-hotel"
+    },
+    {
+
+        "image": "skin/image/icccf3.jpg",
+        "name": "Testing tavel",
+        "description": "im nisi. Nulla vel finibus justo. In malesuada nibh at lectus aliquam, ac mollis odio molestie. Curabitur at sapien et ligula finibus porta id at diam. Suspendisse viverra",
+        "oldprice": "10",
+        "price": "200",
+        "id": 2,
+        "url": "#/offer/2/Testing-hotel"
+    },
+    {
+
+        "image": "skin/image/icccf3.jpg",
+        "name": "Testing tavel",
+        "description": "im nisi. Nulla vel finibus justo. In malesuada nibh at lectus aliquam, ac mollis odio molestie. Curabitur at sapien et ligula finibus porta id at diam. Suspendisse viverra",
+        "price": "459",
+        "id": 3,
+        "url": "#/offer/3/Testing-hotel"
+    },
+    {
+        "hotel": {
+            "start": 4
+        },
+        "image": "skin/image/i22ce3.jpg",
+        "name": "Testing hotel",
+        "description": "Cras turpis lectus, tempor a mollis eu, blandit eget erat. Vestibulum non ante non eros pellentesque varius at id enim. Nunc ultrices posuere tellus et lacinia. Curabitur lobortis",
+        "price": "100",
+        "id": 4,
+        "url": "#/offer/4/Testing-hotel"
+    }
+]

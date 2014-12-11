@@ -1,0 +1,7 @@
+{
+    "name": "zaliczenie",
+    "devDependencies": {
+        "bower": "latest",
+        "express": "latest"
+    }
+}
