@@ -1,6 +1,6 @@
 define([
     'backbone',
-    'app/model/home/offer',
+    'app/model/common/offer',
     'app/model/cart',
 ], function (Backbone, Offer, Cart) {
     var HomeModel = Backbone.Collection.extend({
@@ -25,9 +25,9 @@ define([
         /**
          * Return single home offer
          * @param id
-         * @returns {Offer}
          */
         getSingle : function (id) {
+
             return new Offer({
                 id: id
             });

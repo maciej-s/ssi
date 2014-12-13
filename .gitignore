@@ -1,4 +1,7 @@
 .idea
 .gh-pages
+.zip
 node_modules
 public_html/vendor
+README.md
+INFO.md

@@ -2,7 +2,7 @@ define([
     'jquery',
     'underscore',
     'backbone',
-    'app/model/cart/product'
+    'app/model/common/offer'
 ], function ($, _, Backbone, Product) {
 
     var ProductsFixtures = [
