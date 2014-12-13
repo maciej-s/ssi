@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Home page</title>
+
+    <link rel="stylesheet" type="text/css" href="public_html/vendor/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="public_html/vendor/font-awesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet" type="text/css" href="public_html/skin/layout.css"/>
+</head>
+<body>
+<div class="wrapper">
+    <div class="container">
+        <div class="col-xs-6 col-xs-offset-3">
+            <div class="page-header">
+                <h1>Projekt biura podróży</h1>
+            </div>
+            <div class="row">
+                <div class="col-xs-6 align-right">
+                    <a href="public_html/" class="btn btn-info">Wersja dynamiczna</a>
+                </div>
+                <div class="col-xs-6 align-left">
+                    <a href="public_html/static/" class="btn btn-success">Wersja statyczna</a>
+                </div>
+            </div>
+            <br/><br/>
+            <div id="preview"><h3 id="informacje-o-projekcie">Informacje o projekcie</h3>
+                <p>Aktualna wersja layoutu znajduje się po wglądu pod adresem <a href="https://gonet123.github.io/ssi/">https://gonet123.github.io/ssi/</a>
+                    Repozytorium dostępne z adresu <a href="https://github.com/gonet123/ssi">https://github.com/gonet123/ssi</a></p>
+                <p>Pliki źródłowe nie zawierają kompletnego layoutu ponieważ, jest on na bieżąco przerabiany z formy statycznej do dynamicznej z zastosowaniem frameworka Backbone.js.</p>
+                <p>W celu umożliwienia pracy grupowej, aplikacja została podzielona na moduły wykorzystując do tego RequireJs. Wszystkie tpl-y zawarte w projekcie korzystają z Handlebars (warjacja języka Mustaches).</p>
+                <p>Do wygodniejszego zarządzania plikami CSS wykorzystano pre-processor LESS</p>
+                <p><strong>UWAGA</strong> Z paczki zostały usunięte biblioteki zewnętrzne</p>
+                <h3 id="struktura-katalog-w">Struktura katalogów</h3>
+                <ul>
+                    <li><code>/bin</code> - zawiera serwer uruchomieniowy napisany w nodejs</li>
+                    <li><code>/public_html/</code><ul>
+                        <li><code>js/app/*</code> - kod główny frontendu</li>
+                        <li><code>skin/</code><ul>
+                            <li><code>templates/*</code> - wszystkie tpl</li>
+                            <li><code>layout/*</code> - pliki LESS</li>
+                        </ul>
+                        </li>
+                        <li><code>static/</code>  - strona w wersji statycznej, bez przejść i działających linków</li>
+                        <li><code>vendor/</code>- lib zewnętrzne</li>
+                        <li><code>get/</code> - przykładowymapping do kontrolerów REST</li>
+                    </ul>
+                    </li>
+                </ul>
+                <h3 id="autorzy">Autorzy</h3>
+                <p>Łukasz Torba, Maciej Szewczyk, Mateusz Godzik</p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

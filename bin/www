@@ -5,13 +5,13 @@ var express = require('express'),
 
 var load = function (req, res) {
     var fs = require('fs'),
-        // mime = require('mime-types'),
+        mime = require('mime-types'),
         path = '../public_html/'+req.originalUrl;
 
 
-    // res.type(mime.lookup(path));
+    res.type(mime.lookup(path));
     res.send(fs.readFileSync(path));
-}
+};
 
 app.get('/', function (req, res ){
     req.originalUrl = 'index.html';

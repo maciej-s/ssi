@@ -1,6 +1,7 @@
 define([
-    'backbone'
-], function (Backbone) {
+    'backbone',
+    'app/alert'
+], function (Backbone, Alert) {
     /**
      * Offer model
      */
@@ -15,11 +16,14 @@ define([
             id: 0,
             url: ''
         },
-        urlRoot : 'get/offer/home',
+        urlRoot : 'get/offer',
         url: function () {
             if(this.get('id')) {
-                return this.urlRoot +'/'+ this.get('id')+'.json'
+                return this.urlRoot +'/'+ this.get('id')+'/info.json'
             }
+            Alert.warning('Offer does not exists');
+            throw new Error('Missing product id');
         }
-    })
+    });
+
 });

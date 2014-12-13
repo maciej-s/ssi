@@ -4,9 +4,9 @@
     <meta charset="UTF-8"/>
     <title>Home page</title>
 
-    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/dist/css/bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="vendor/font-awesome/css/font-awesome.min.css"/>
-    <link rel="stylesheet" type="text/css" href="skin/layout.css"/>
+    <link rel="stylesheet" type="text/css" href="../vendor/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../vendor/font-awesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../skin/layout.css"/>
 </head>
 <body>
 <div class="wrapper">
@@ -83,7 +83,108 @@
     <section class="content">
 
         <div id="main-content">
+            <div class="container categories">
+                <div class="row">
+                    <div class="col-xs-9 cart-action">
+                        <h1>Cart</h1>
+                    </div>
+                    <div class="col-xs-3 cart-action align-right">
+                        <a href="#" class="btn btn-info btn-lg"><i class="fa fa-ticket"></i> Proceed to Checkout</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-9">
+                        <ul class="offer-list horizontal clearfix" >
+                            <li class="col-lg-3 col-sm-4 col-xs-6">
+                                <article class="offer-item last-minute">
+                                    <a class="offer-image offer-preview" href="#/hotel/Ciry-Center-Meal">
+                                        <img src="../skin/image/i22ce3.jpg"/>
+                                    </a>
+                                    <div class="offer-content">
+                                        <header class="offer-title">
+                                            <h1>
+                                                <i class="fa fa-suitcase"></i> City Center Meal very very long without overflow
+                                            </h1>
+                                        </header>
+                                        <p class="offer-description">
+                                            Little description
+                                        </p>
+                                        <div class="clearfix offer-price-block">
+                                            <span class="align-right block">
+                                                <span class="offer-modifier">from</span>
+                                                <span class="offer-price">
+                                                    <span class="old-price">€50</span>
+                                                    €200
+                                                </span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </article>
+                            </li>
+                            <li class="col-lg-3 col-sm-4 col-xs-6">
+                                <article class="offer-item offer-in-cart offer-hotel">
+                                    <a class="offer-image offer-preview" href="#/hotel/Ciry-Center-Meal">
+                                        <img src="../skin/image/idx9f3.jpg"/>
+                                    </a>
+                                    <div class="offer-content">
+                                        <div class="shell-stars is-tooltip" data-amount="4" title="Four points in shell rating">
+                                            <i class="fa fa-star fill"></i>
+                                            <i class="fa fa-star fill"></i>
+                                            <i class="fa fa-star fill"></i>
+                                            <i class="fa fa-star fill"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                        <header class="offer-title">
+                                            <h1>
+                                                <i class="fa fa-university offer-icon"></i> City Center Meal very very long without overflow
+                                            </h1>
+                                        </header>
+                                        <p class="offer-description">
+                                            Little description
+                                        </p>
+                                        <div class="clearfix offer-price-block">
+                                            <span class="align-right block">
+                                                <span class="offer-modifier">&nbsp;</span>
+                                                <span class="offer-price">
+                                                    <span class="old-price">€50</span>
+                                                    €200
+                                                </span>
+                                            </span>
+                                        </div>
+                                        <div class="clearfix offer-in-cart-block">
+                                            <a href="#" class="btn btn-danger"><i class="glyphicon-shopping-cart glyphicon"></i> Remove from cart</a>
+                                        </div>
+                                    </div>
+                                </article>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-3">
+                        <ul class="cart-summary">
+                            <li>
+                                <span class="lbl">Total</span>
+                                <span class="value price">
+                                    250€
+                                </span>
+                            </li>
+                            <li class="separator"></li>
+                            <li>
+                                <span class="lbl">Base</span>
+                                <span class="value">
+                                    250€
+                                </span>
+                            </li>
+                            <li>
+                                <span class="lbl">VAT</span>
+                                <span class="value">
+                                    23%
+                                </span>
+                            </li>
 
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 </div>
@@ -156,7 +257,7 @@
     </div>
 </footer>
 <!-- loag js //-->
-<script type="text/javascript" src="vendor/requirejs/require.js"></script>
-<script type="text/javascript" src="js/require.js"></script>
+<script type="text/javascript" src="../vendor/requirejs/require.js"></script>
+<!--<script type="text/javascript" src="js/require.js"></script>//-->
 </body>
 </html>
