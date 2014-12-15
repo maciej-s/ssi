@@ -1,7 +1,7 @@
 define([
     'app/views/miniCart',
-    'app/model/cart'
-],function(miniCart, CartModel){
+    'app/microformats'
+],function(miniCart, Microformats){
 
     // init user
     var initUser = function () {
@@ -26,6 +26,8 @@ define([
         // initialize cart
         initCart();
 
+        // init microformats
+        Microformats.init();
     };
 
     return {

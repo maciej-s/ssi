@@ -1,6 +1,7 @@
 define([
     'backbone',
     'app/alert'
+
 ], function (Backbone, Alert) {
     /**
      * Offer model

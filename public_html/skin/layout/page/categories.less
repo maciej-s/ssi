@@ -56,3 +56,16 @@
     margin-top: 5px;
   }
 }
+
+.fetch-more {
+  display: none;
+  background: lighten(@body-bg, 2%);
+  margin: 15px 0;
+  padding: 10px 15px;
+  text-align: center;
+  border: 1px solid darken(@body-bg, 10%);
+  color: @content-color;
+  &.active {
+    display: block;
+  }
+}

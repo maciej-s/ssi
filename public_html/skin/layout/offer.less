@@ -27,6 +27,7 @@
         background: @offer-bg;
         padding: 10px;
         position: relative;
+        height: 225px;
 
         .offer-title {
           width: inherit;
@@ -43,7 +44,13 @@
         }
 
         .offer-price-block {
-          font-size: 12t;
+          font-size: 12pt;
+          position: absolute;
+          bottom: 0px;
+          width: 100%;
+          left: 0px;
+          padding: 15px;
+
           .offer-modifier {
             color: @content-color;
             .block();
@@ -86,7 +93,7 @@
           }
         }
       }
-      &.last-minute {
+      &.offer-last-minute {
         position: relative;
         overflow: hidden;
         > .offer-image {

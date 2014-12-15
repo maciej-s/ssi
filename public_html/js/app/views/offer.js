@@ -16,9 +16,9 @@ define([
                         // initialize single view
                         single.initialize(options);
                     });
-                } else if (options.params[0] == 'all') {
+                } else if (options.params[0]) {
                     // load all categories
-                    require(['app/view/offer/categories'], function (categories){
+                    require(['app/views/offer/categories'], function (categories){
                         categories.initialize(options);
                     });
                 }

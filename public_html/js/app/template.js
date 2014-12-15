@@ -1,8 +1,8 @@
 define([
     'handlebars',
     'jquery',
-    'app/model/cart'
-], function (Handlebars, $, Cart){
+    'app/microformats'
+], function (Handlebars, $, Microformats){
 
     window.Compiled = [];
 
@@ -49,7 +49,10 @@ define([
     function load (template, context) {
         var $def = $.Deferred();
         cache(template).done(function (compiled) {
-            $def.resolve(compiled(context), compiled);
+            var $template = $(compiled(context));
+
+            Microformats.global($template);
+            $def.resolve($template, compiled);
         }).fail(function(){
             $def.reject();
         });
@@ -82,7 +85,7 @@ define([
         Handlebars.registerPartial('cartButtons', template);
 
         cache('pages/home/offer').done(function (template) {
-            Handlebars.registerPartial('homeOffer', template);
+            Handlebars.registerPartial('offer', template);
         });
     });
 

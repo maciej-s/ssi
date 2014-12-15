@@ -1,0 +1,93 @@
+<div class="container categories">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="page-header">
+                        <h1>Categories</h1>
+                    </div>
+                    <div class="widget-wrapper filtering active" id="filterbox">
+                        <section class="widget widget-horizontal">
+                            <header>
+                                <h3 class="widget-title clearfix ">
+                                    <span class="lbl block pull-left mf-toggle" data-ref="#filterbox"><i
+                                            class="fa fa-filter"></i> Filters / Sort</span>
+                        <span class="block pull-right align-right">
+                            <a href="#" class="sort mf-toggle mf-memorize" data-toggle="up" data-type="price"> price <i
+                                    class="fa fa-sort-down"></i></a>
+                            <a href="#" class="sort mf-toggle mf-memorize" data-toggle="up" data-type="duration">
+                                duration <i class="fa fa-sort"></i></a>
+                        </span>
+                                </h3>
+                            </header>
+                            <div class="row widget-content">
+                                <form class="form form-horizontal filtering">
+                                    <div class="form-group col-xs-4 ">
+                                        <div class="col-xs-12 control-label">
+                                            Categories
+                                        </div>
+                                        <div class="col-xs-12 checkbox">
+                                            <label>
+                                                <input type="checkbox" class="filter" data-type="hotel" name="filter[]" value="1" checked/><span class="lbl">Hotels</span>
+                                            </label>
+                                        </div>
+                                        <div class="col-xs-12 checkbox">
+                                            <label>
+                                                <input type="checkbox" class="filter" data-type="travel" name="filter[]" value="2" checked/><span class="lbl" >Travels</span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-xs-4">
+                                        <div class="col-xs-12 control-label">
+                                            Modifiers
+                                        </div>
+                                        <div class="col-xs-12 checkbox">
+                                            <label>
+                                                <input type="checkbox" class="filter modifier" data-type="last-minute" name="modifier[]" value="3" checked/><span class="lbl">Last minute</span>
+                                            </label>
+                                        </div>
+                                        <div class="col-xs-12 checkbox">
+                                            <label>
+                                                <input type="checkbox" class="filter modifier" data-type="discount" name="modifier[]" value="3" checked/><span class="lbl">Discount</span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-xs-4">
+                                        <div class="col-xs-12 control-label">
+                                            Price
+                                        </div>
+                                        <div class="clearfix range">
+                                            <div class="col-xs-6">
+                                                <input type="text" class="form-control" placeholder="From"/>
+                                            </div>
+                                            <div class="col-xs-6">
+                                                <input type="text" class="form-control" placeholder="To"/>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <ul class="offer-list horizontal clearfix" id="offers">
+                        {{#collection offers}}
+                            <li class="col-lg-3 col-sm-4 col-xs-6" id="offer-{{id}}">
+                                {{> offer}}
+                            </li>
+                        {{/collection}}
+                    </ul>
+                </div>
+                <div class="col-xs-12">
+                    <a href="#" class="fetch-more active">Load more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
