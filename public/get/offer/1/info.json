@@ -1,0 +1,11 @@
+{
+    "hotel": {
+        "start": 4
+    },
+    "image": "skin/image/i22ce3.jpg",
+    "name": "Testing hotel",
+    "description": "Cras turpis lectus, tempor a mollis eu, blandit eget erat. Vestibulum non ante non eros pellentesque varius at id enim. Nunc ultrices posuere tellus et lacinia. Curabitur lobortis",
+    "price": "100",
+    "id": 1,
+    "url": "#/offer/1/Testing-hotel"
+}

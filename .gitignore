@@ -1,7 +1,15 @@
 .idea
 .gh-pages
 .zip
+.gradle
+.idea
+.settings
+.classpath
+.project
+.git
+bin
+build
 node_modules
-public_html/vendor
+public/vendor
 README.md
 INFO.md

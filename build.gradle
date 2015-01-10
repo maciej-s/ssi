@@ -1,0 +1,51 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.1.10.RELEASE")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'spring-boot'
+
+jar {
+    baseName = 'gs-spring-boot'
+    version =  '0.1.0'
+}
+
+repositories {
+    mavenCentral()
+    flatDir {
+        dirs 'src/lib'
+    }
+}
+
+dependencies {
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'org.springframework.boot:spring-boot-starter-data-jpa:1.1.4.RELEASE'
+
+    compile 'org.hibernate:hibernate-core:4.3.6.Final'
+    compile 'javax.servlet:javax.servlet-api:3.1.0'
+    compile 'mysql:mysql-connector-java:5.1.31'
+    compile 'org.javassist:javassist:3.15.0-GA'
+    compile 'commons-dbcp:commons-dbcp:1.4'
+
+    compile ':ojdbc6'
+
+    testCompile("junit:junit")
+}
+
+sourceSets {
+    main {
+        resources {
+            srcDir 'src/resource'
+        }
+        java {
+        	srcDir 'src/java'
+        }        
+    }
+}

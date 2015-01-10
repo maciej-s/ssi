@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Home page</title>
+
+    <link rel="stylesheet" type="text/css" href="../vendor/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../vendor/font-awesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet" type="text/css" href="../skin/layout.css"/>
+</head>
+<body>
+<div class="wrapper">
+    <header class="top">
+        <nav class="navbar navbar-travel">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                        <ul class="nav navbar-nav row inline-block">
+                            <li class="logo">
+                                <span class="dot">.</span><span class="name">travel</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-5 col-sm-5 col-md-6 col-lg-6 category-nav">
+                        <div class="row">
+                            <div class="col-xs-9 col-sm-9 col-lg-7 col-md-6">
+                                <div class="row">
+                                    <form action="#" class="form form-horizontal search-form">
+                                        <fieldset>
+                                            <div class="form-group col-md-hide">
+                                                <div class="col-xs-12">
+                                                    <div class="input-group">
+                                                        <input type="text" value="" placeholder="Type to start searching" class="form-control"/>
+                                                                    <span class="input-group-addon">
+                                                                        <i class="fa fa-search"></i>
+                                                                    </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-xs-3 col-sm-3 col-lg-5 col-md-6">
+                                <a href="#" class="opener is-toggle" data-toggle="">
+                                    <i class="fa fa-list"></i><span class="lbl"> Categories</span>
+                                </a>
+                                <ul class="nav navbar-nav row">
+                                    <li class=""><a href="#"><i class="fa fa-university"></i> Hotels</a></li>
+                                    <li class=""><a href="#"><i class="fa fa-suitcase"></i> Travels</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-5 col-sm-5 col-md-4 col-lg-4">
+                        <ul class="nav navbar-nav row">
+                            <!-- place mini cart //-->
+                            <li class="dropdown pull-right" id="mini-cart"></li>
+
+                            <li class="dropdown pull-right my-account">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    <i class="glyphicon glyphicon-user"></i><span class="lbl"> My Account</span> <span class="caret"></span></a>
+
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Orders</a></li>
+                                    <li><a href="#">History</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">Settings</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="alert-wrapper">
+        <div class="row">
+            <div class="alert-container">
+            </div>
+        </div>
+    </div>
+    <section class="content">
+        <div id="main-content">
+            <div class="container categories">
+                <div class="row">
+                    <div class="col-xs-9 cart-action">
+                        <h1>User Settings</h1>
+                    </div>
+                    <div class="col-xs-3 cart-action align-right">
+                        <a href="#" class="btn btn-warning btn-lg">Apply changes</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-9">
+                        <form class="form form-horizontal">
+                            <fieldset>
+                                <div class="form-section">
+                                    <h2 class="form-section-title">Basic Info</h2>
+                                    <div class="form-group">
+                                        <label class="control-label col-xs-3">
+                                            Name
+                                        </label>
+                                        <div class="col-xs-5">
+                                            <input type="text" class="form-control" placeholder="Your name"/>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-xs-3">
+                                            Surname
+                                        </label>
+                                        <div class="col-xs-5">
+                                            <input type="text" class="form-control" placeholder="Your surname"/>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-xs-3">
+                                            E-mail
+                                        </label>
+                                        <div class="col-xs-5">
+                                            <input type="email" class="form-control" placeholder="Your email, eg. test@test.com"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-xs-3">
+                                            Password
+                                        </label>
+                                        <div class="col-xs-5 align-verticaly">
+                                            <a href="#">change</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-section">
+                                    <h2 class="form-section-title">Contact Address</h2>
+                                    <div class="form-group">
+                                        <label class="control-label col-xs-3">
+                                            Name
+                                        </label>
+                                        <div class="col-xs-5">
+                                            <input type="text" class="form-control" placeholder="Your name"/>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-xs-3">
+                                            Surname
+                                        </label>
+                                        <div class="col-xs-5">
+                                            <input type="text" class="form-control" placeholder="Your surname"/>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="control-label col-xs-3">
+                                            E-mail
+                                        </label>
+                                        <div class="col-xs-5">
+                                            <input type="email" class="form-control" placeholder="Your email, eg. test@test.com"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-xs-3">
+                                            Password
+                                        </label>
+                                        <div class="col-xs-5 align-verticaly">
+                                            <a href="#">change</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-3">
+                <section class="section">
+                    <article>
+                        <header><h3 class="section-title">Menu</h3></header>
+                        <nav class="row">
+                            <div class="col-xs-6 align-right">
+                                <i class="glyphicon glyphicon-list section-icon"></i>
+                            </div>
+                            <ul class="nav nav-list col-xs-6 align-right">
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Offers</a></li>
+                                <li><a href="#">Travels</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </nav>
+                    </article>
+                </section>
+            </div>
+            <div class="col-xs-3">
+                <section class="section">
+                    <article>
+                        <header><h3 class="section-title">My Account</h3></header>
+                        <nav class="row">
+                            <div class="col-xs-6 align-right">
+                                <i class="glyphicon glyphicon-user section-icon"></i>
+                            </div>
+                            <ul class="nav nav-list align-right col-xs-6">
+                                <li><a href="#">Sign in</a></li>
+                                <li><a href="#">Orders</a></li>
+                                <li><a href="#">Billings</a></li>
+                                <li><a href="#">Messages</a></li>
+                            </ul>
+                        </nav>
+                    </article>
+                </section>
+            </div>
+            <div class="col-xs-6">
+                <div class="logo">
+                    <span class="dot">.</span>travel
+                </div>
+                <section class="section">
+                    <article>
+                        <header>
+                            <h3 class="section-title">Cart </h3></header>
+                        <nav>
+                            <ul class="nav nav-list align-right">
+                                <li class="cart-info row">
+                                    <div class="cart-icon col-xs-6">
+                                        <i class="glyphicon glyphicon-shopping-cart"></i>
+                                    </div>
+                                    <div class="cart-summary col-xs-6">
+                                        <span class="cart-amount">Total: 10</span>
+                                                <span class="cart-value">
+                                                    <span class="distinguished">€20.00</span>
+                                                </span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </nav>
+                    </article>
+                </section>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- loag js //-->
+<script type="text/javascript" src="../vendor/requirejs/require.js"></script>
+<!--<script type="text/javascript" src="js/require.js"></script>//-->
+</body>
+</html>

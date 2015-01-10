@@ -1,0 +1,46 @@
+{{! Offer tempalte  - for homepage and offers listing }}
+<article class="offer-item {{#incart}}offer-in-cart{{/incart}} {{#hotel}}offer-hotel{{else}}offer-travel{{/hotel}} {{#lastMinute}}offer-last-minute{{/lastMinute}} {{#price.discount}}offer-discount{{/price.discount}}">
+    <a class="offer-image offer-preview" href="{{url}}">
+        {{#image}}<img src="{{.}}"/>{{/image}}
+    </a>
+    <div class="offer-content">
+        {{#hotel}}
+            <div class="shell-stars is-tooltip" data-amount="4" title="Four points in shell rating">
+                <i class="fa fa-star fill"></i>
+                <i class="fa fa-star fill"></i>
+                <i class="fa fa-star fill"></i>
+                <i class="fa fa-star fill"></i>
+                <i class="fa fa-star"></i>
+            </div>
+        {{/hotel}}
+        <header class="offer-title">
+            <h1>
+                <i class="{{#hotel}}fa-home{{else}}fa-university{{/hotel}} fa"></i> {{name}}
+            </h1>
+        </header>
+        <p class="offer-description">
+            {{description}}
+        </p>
+        <div class="clearfix offer-price-block">
+            <div class="row">
+                <div class="col-xs-6 align-left offer-action">
+                    {{> cartButtons}}
+                </div>
+                <div class="col-xs-6">
+                    <span class=" align-right block">
+                        {{#price}}
+                            <span class="offer-modifier">{{#modifier}}{{.}}{{else}}&nbsp;{{/modifier}}</span>
+                        <span class="offer-price price mf-format">
+                            {{#discount}}
+                                <span class="old-price">{{../base}}</span>{{.}}
+                            {{else}}
+                                {{base}}
+                            {{/discount}}
+                        </span>
+                        {{/price}}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>
