@@ -2,17 +2,20 @@ package eirkdbd.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "offer_widget")
 public class OfferWidget {
 
-    private Integer itemId;
-    private Integer offerId;
+    private Integer id;
+    private Offer offer;
     private String name;
     private String content;
 
@@ -36,22 +39,23 @@ public class OfferWidget {
         this.name = name;
     }
 
-    @Column(name = "offer_id")
-    public Integer getOfferId() {
-        return offerId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "offer_id", nullable = false)
+    public Offer getOfferId() {
+        return offer;
     }
 
-    public void setOfferId(Integer offerId) {
-        this.offerId = offerId;
+    public void setOfferId(Offer offerId) {
+        this.offer = offerId;
     }
 
     @Column(name = "item_id")
     public Integer getItemId() {
-        return itemId;
+        return id;
     }
 
     public void setItemId(Integer itemId) {
-        this.itemId = itemId;
+        this.id = itemId;
     }
 
 }

@@ -4,9 +4,11 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -19,6 +21,7 @@ public class User implements Serializable {
     private String login;
     private String password;
     private String email;
+    private UserBasket basket;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -74,5 +77,14 @@ public class User implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+    public UserBasket getBasket() {
+        return basket;
+    }
+
+    public void setBasket(UserBasket basket) {
+        this.basket = basket;
     }
 }

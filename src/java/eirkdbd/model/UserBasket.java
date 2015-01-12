@@ -9,14 +9,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.sql.Timestamp;
+import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 @Entity
 @Table(name = "offer_basket")
 public class UserBasket implements Serializable {
 
-    private Integer itemId;
+    private Integer id;
     private Float total;
-    private Integer userId;
+    private User user;
     private Timestamp timeStamp;
     private STATUS status;
 
@@ -24,11 +27,11 @@ public class UserBasket implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "item_id")
     public Integer getItemId() {
-        return itemId;
+        return id;
     }
 
     public void setItemId(Integer id) {
-        this.itemId = id;
+        this.id = id;
     }
 
     @Column(name = "total")
@@ -40,16 +43,17 @@ public class UserBasket implements Serializable {
         this.total = total;
     }
 
-    @Column(name = "user_id")
-    public Integer getUserId() {
-        return userId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", nullable = false)
+    public User getUserId() {
+        return user;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public void setUserId(User userId) {
+        this.user = userId;
     }
 
-    @Column(name = "stars")
+    @Column(name = "timestamp")
     public Timestamp getTimestamp() {
         return timeStamp;
     }
@@ -58,6 +62,7 @@ public class UserBasket implements Serializable {
         this.timeStamp = timestamp;
     }
 
+    @Column(name = "status")
     public STATUS getStatus() {
         return status;
     }
