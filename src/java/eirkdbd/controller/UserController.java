@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import eirkdbd.response.UserResponse;
 import eirkdbd.service.UserService;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @RestController
 @RequestMapping("/get/user/")
@@ -18,28 +19,32 @@ public class UserController {
     private UserService service;
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public UserResponse getUser(@PathVariable("id") Integer id) {
+    public @ResponseBody
+    UserResponse getUser(@PathVariable("id") Integer id) {
         User user = service.get(id);
-        // convert user to user response
-        return null;
+        return new UserResponse(user);
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public UserResponse getUsers() {
+    public @ResponseBody
+    UserResponse getUsers() {
         Iterable<User> all = service.getAll();
-        // convert users to users response
-        return null;
+        return new UserResponse(all);
     }
 
     @RequestMapping(value = "/{user}", method = RequestMethod.POST)
-    public UserResponse putUser(@PathVariable("user") User user) {
+    public @ResponseBody
+    UserResponse putUser(@PathVariable("user") User user) {
         service.set(user);
-        // convert user to user response
-        return null;
+        User get = service.get(user.getId());
+        return new UserResponse(get);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public void removeUser(@PathVariable("id") Integer id) {
+    public @ResponseBody
+    UserResponse removeUser(@PathVariable("id") Integer id) {
+        User get = service.get(id);
         service.remove(id);
+        return new UserResponse(get);
     }
 }
